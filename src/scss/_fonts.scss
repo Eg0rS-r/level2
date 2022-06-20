@@ -1,0 +1,20 @@
+@font-face {
+	font-family: "Trebuchet MS";
+	font-style: normal;
+	font-weight: normal;
+	src: local("Trebuchet MS"), url("/assets/fonts/trebuc.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Trebuchet MS Italic";
+	font-style: normal;
+	font-weight: normal;
+	src: local("Trebuchet MS Italic"), url("/assets/fonts/Trebuchet-MS-Italic.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Exo2.0";
+	font-style: normal;
+	font-weight: 100;
+	src: local("Exo2.0"), url("/assets/fonts/Exo2.0-Thin.woff") format("woff");
+}

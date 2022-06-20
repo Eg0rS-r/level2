@@ -1,0 +1,18 @@
+.conteiner {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 100vh;
+	max-width: 1160px;
+	padding: 36px 20px 67px;
+	margin: 0 auto;
+}
+
+.header {
+	text-align: center;
+	font-size: 2.25rem;
+	line-height: 2.74rem;
+	font-family: "Exo2.0";
+	font-weight: 100;
+	margin-bottom: 24px;
+}

@@ -1,0 +1,30 @@
+:root {
+	--bg-color: #000000;
+	--bg-inverted-color: #ffffff;
+	--accent-color: #1698d9;
+	--accent-hover-color: #2ea8e6;
+	--accent-selectd-color: #d91667;
+	--accent-selectd-hover-color: #e52e7a;
+	--accent-disable-color: #b3b3b3;
+	--text-color: #666666;
+	--warning-color: #ffff66;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	font-family: "Trebuchet MS";
+	color: var(--bg-inverted-color);
+	background-image: url(/assets/images/Pattern.jpg);
+	background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 5e-5) 49.88%, rgba(0, 0, 0, 0.5) 100%),
+		url(/assets/images/Pattern.jpg);
+}
+
+button {
+	cursor: pointer;
+}

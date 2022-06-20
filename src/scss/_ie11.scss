@@ -1,0 +1,54 @@
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.card-list {
+		margin-right: -80px;
+		margin-bottom: -80px;
+	}
+
+	.card-list__item {
+		flex: 1 1 auto;
+		margin-right: 80px;
+		margin-bottom: 80px;
+	}
+
+	.card {
+		border: var(--card-thickness) solid var(--accent-color);
+
+		&:hover {
+			border-color: var(--accent-hover-color);
+
+			& .card__weight {
+				background-color: var(--accent-hover-color);
+			}
+		}
+	}
+
+	.card--selected {
+		border-color: var(--accent-selectd-color);
+
+		& .card__weight {
+			background-color: var(--accent-selectd-color);
+		}
+
+		&:hover {
+			border-color: var(--accent-selectd-hover-color);
+
+			.card__weight {
+				background-color: var(--accent-selectd-hover-color);
+			}
+		}
+	}
+
+	.card--disable {
+		border-color: var(--accent-disable-color);
+
+		& .card__weight {
+			background-color: var(--accent-disable-color);
+		}
+	}
+
+	.card__cat {
+		z-index: 0;
+		left: 0;
+		bottom: 0;
+	}
+}

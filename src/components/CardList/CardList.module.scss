@@ -1,0 +1,30 @@
+.list {
+	list-style-type: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 80px;
+}
+
+.item {
+	flex: 1;
+}
+
+.notFound {
+	text-align: center;
+	font-size: 1.2rem;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.list {
+		margin-right: -80px;
+		margin-bottom: -80px;
+	}
+
+	.item {
+		flex: 1 1 auto;
+		margin-right: 80px;
+		margin-bottom: 80px;
+	}
+}

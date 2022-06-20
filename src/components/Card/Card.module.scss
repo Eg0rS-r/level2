@@ -1,0 +1,188 @@
+:root {
+	--card-color: var(--accent-color);
+	--card-thickness: 4px;
+	--card-corner-size: 43px;
+	--card-border-radius: 12px;
+}
+
+.card {
+	// вообще переменные должны быть здесь, но у меня не получилось адаптировать это к ie
+	/* --card-color: var(--accent-color);
+	--card-thickness: 4px;
+	--card-corner-size: 43px;
+	--card-border-radius: 12px; */
+
+	min-width: 250px;
+	width: 100%;
+	max-width: 320px;
+	height: 480px;
+	margin: 0 auto;
+	position: relative;
+
+	padding: 21px 1rem 1rem 3rem;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	cursor: pointer;
+
+	color: var(--text-color);
+	background-color: var(--bg-inverted-color);
+	border: none;
+	border-radius: var(--card-border-radius);
+	clip-path: polygon(var(--card-corner-size) 0%, 100% 0%, 100% 100%, 0% 100%, 0% var(--card-corner-size));
+}
+
+.card::before {
+	content: "";
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: -1;
+	box-sizing: border-box;
+	border: var(--card-thickness) solid var(--card-color);
+	border-radius: var(--card-border-radius);
+	background-image: linear-gradient(
+		135deg,
+		var(--card-color) 0px,
+		var(--card-color) calc(var(--card-corner-size) * 0.707 - var(--card-thickness) / 2),
+		transparent calc(var(--card-corner-size) * 0.707 - var(--card-thickness) / 2)
+	);
+}
+
+.card_selected {
+	--card-color: var(--accent-selectd-color);
+}
+
+.card_disabled {
+	pointer-events: none;
+	cursor: default;
+	--card-color: var(--accent-disable-color);
+}
+
+.card_disabled > *:not(.weight) {
+	color: #b3b3b3;
+	opacity: 0.5;
+}
+
+.card_disabled + .footnote {
+	color: var(--warning-color);
+}
+
+.card_hover:hover {
+	--card-color: var(--accent-hover-color);
+
+	& .card_selected {
+		--card-color: var(--accent-selectd-hover-color);
+	}
+}
+
+.title {
+	margin-top: 5px;
+	font-size: 3rem;
+	color: var(--bg-color);
+}
+
+.subtitle {
+	font-size: 1.5rem;
+	color: var(--bg-color);
+}
+
+.info {
+	text-align: left;
+	margin-top: 15px;
+	font-size: 0.875rem;
+	flex: 1;
+}
+
+.text > span {
+	font-weight: bold;
+}
+
+.cat {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	border-radius: var(--card-border-radius);
+	z-index: -2;
+}
+
+.weight {
+	width: 80px;
+	height: 80px;
+	align-self: flex-end;
+	background-color: var(--card-color);
+	color: var(--bg-inverted-color);
+	border-radius: 50%;
+	z-index: 100;
+	text-align: center;
+	font-size: 1.3rem;
+	padding-top: 17px;
+	& > span {
+		font-size: 2.625rem;
+		line-height: 1.9rem;
+	}
+}
+
+.footnote {
+	text-align: center;
+	margin-top: 0.875rem;
+	font-size: 0.812rem;
+}
+
+.btn {
+	background: none;
+	border: none;
+	color: var(--accent-color);
+	text-decoration: underline;
+	text-decoration-style: dashed;
+	font-weight: bold;
+
+	&:hover {
+		text-decoration-style: solid;
+		color: var(--accent-hover-color);
+	}
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+	.card {
+		border: var(--card-thickness) solid var(--accent-color);
+
+		&:hover {
+			border-color: var(--accent-hover-color);
+
+			.weight {
+				background-color: var(--accent-hover-color);
+			}
+		}
+	}
+
+	.card_selected {
+		border-color: var(--accent-selectd-color);
+
+		.weight {
+			background-color: var(--accent-selectd-color);
+		}
+
+		&:hover {
+			border-color: var(--accent-selectd-hover-color);
+
+			.weight {
+				background-color: var(--accent-selectd-hover-color);
+			}
+		}
+	}
+
+	.card_disabled {
+		border-color: var(--accent-disable-color);
+
+		.weight {
+			background-color: var(--accent-disable-color);
+		}
+	}
+
+	.cat {
+		z-index: 1;
+	}
+}
