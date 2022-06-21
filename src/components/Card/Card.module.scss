@@ -73,7 +73,7 @@
 .card_hover:hover {
 	--card-color: var(--accent-hover-color);
 
-	& .card_selected {
+	&.card_selected {
 		--card-color: var(--accent-selectd-hover-color);
 	}
 }
